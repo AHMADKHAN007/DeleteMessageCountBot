@@ -34,6 +34,6 @@ async def handle_check(client, message):
     with open('del.txt', 'w', encoding='utf-8') as file:
         async for mes in bot.get_chat_history(chat_id=bot_user_id, limit=limit):
             file.write(f'id: {mes.id}\nDate: {mes.date}\n---------------\n')
-
+    await bot.send_document(chat_id=userid, document='del.txt')
 
 bot.run()
