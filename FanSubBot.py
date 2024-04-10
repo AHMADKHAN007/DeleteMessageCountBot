@@ -27,7 +27,7 @@ counter = Counter()
 counter_del = Counter_del()
 
 
-@bot.on_message(filters.chat(userid) & filters.text & filters.regex('/check'))
+@bot.on_message(filters.chat(userid) & filters.text & filters.regex('/del'))
 async def handle_check(client, message):
     limit = int(message.text.strip().split()[1])
     async for mes in bot.get_chat_history(chat_id=bot_user_id, limit=limit):
